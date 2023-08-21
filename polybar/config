@@ -4,7 +4,7 @@ include-file = /home/daw/.config/polybar/master.conf
 
 [bar/main]
 inherit = bar/master
-monitor = ${env:MONITOR:DP-1}
+monitor = ${env:MONITOR:DP-0}
 
 modules-left = launcher spotify
 modules-center = workspaces
@@ -12,6 +12,6 @@ modules-right = cpu memory temperature filesystem network volume date powermenu
 
 [bar/secondary]
 inherit = bar/master
-monitor = ${env:MONITOR:HDMI-1}
+monitor = ${env:MONITOR:HDMI-0}
 
 modules-left = workspaces
