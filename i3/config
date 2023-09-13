@@ -190,10 +190,28 @@ bindsym $mod+Shift+s exec spotify
 
 bindsym --release $mod+Print exec gnome-screenshot -a
 
+# Command for the status line
+#   ie: i3blocks, i3status
+set $statuscmd i3status
+
+# Signal used to update the status line
+#   i3blocks uses SIGRTMIN+10 by default
+#   i3status uses SIGUSR1 by default
+set $statussig SIGUSR1
+
+## Volume control
+
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# Review the lines below and append to ~/.config/i3/config
+
 ## Volume control
 
 # Path to volume control, without trailing slash
-set $volumepath ~/i3-volume
+set $volumepath ~/.config/i3/
 
 # Command for the status line
 #   ie: i3blocks, i3status
@@ -204,40 +222,20 @@ set $statuscmd i3status
 #   i3status uses SIGUSR1 by default
 set $statussig SIGUSR1
 
-
-################################################################################################
-## SOUND -section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
-################################################################################################
-
-# exec --no-startup-id volumeicon
-#bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
-# exec --no-startup-id pulseaudio
-#exec --no-startup-id pa-applet
-# bindsym $mod+Ctrl+m exec pavucontrol
-
-
-# # Amount to increase/decrease volume as a percentage
+# Amount to increase/decrease volume as a percentage
 set $volumestep 5
 
-# alsa-utils settings
+# pulseaudio-utils settings
 #
-# To configure a default card, see https://www.alsa-project.org/main/index.php/Asoundrc
-#
-# Card number to control.
-#   If not specified, i3-volume will let `amixer` use a default.
-#   List cards: aplay -l
-# set $alsacard 1
+# Symbolic name for sink (numeric index not supported)
+#   Recommended: comment out this setting and omit the -s option to use default sink
+#   List sink names: pacmd list-sinks | awk -F "[<>]" '/^\s+name: <.*>/{print $2}'
+#set $sinkname alsa_output.pci-0000_00_1b.0.analog-stereo
 
-
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioPause exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
-
-# # append "-c $alsacard" without quotes to override default card
-bindsym XF86AudioRaiseVolume exec --no-startup-id $volumepath/volume -an -t $statuscmd -u $statussig up $volumestep
-bindsym XF86AudioLowerVolume exec --no-startup-id $volumepath/volume -an -t $statuscmd -u $statussig down $volumestep
-bindsym XF86AudioMute        exec --no-startup-id $volumepath/volume -an -t $statuscmd -u $statussig mute
+# Using pulseaudio-utils (append "-s $sinkname" without quotes to override default sink)
+bindsym XF86AudioRaiseVolume exec --no-startup-id $volumepath/volume -t $statuscmd -u $statussig up $volumestep
+bindsym XF86AudioLowerVolume exec --no-startup-id $volumepath/volume -t $statuscmd -u $statussig down $volumestep
+bindsym XF86AudioMute        exec --no-startup-id $volumepath/volume -t $statuscmd -u $statussig mute
 
 # Moving workspaces between screens 
 bindsym $mod+p move workspace to output right
