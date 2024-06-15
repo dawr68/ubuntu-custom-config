@@ -229,5 +229,8 @@ exec --no-startup-id nitrogen --set-zoom-fill --random --head=0 /home/daw/Images
 exec --no-startup-id picom -CGb
 
 ### Logi mouse setup
-exec --no-startup-id xinput set-prop 10 292 1 #natural scrolling
-exec --no-startup-id xinput set-prop 10 157 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 2.5 #pointer speed by half and a half
+exec --no-startup-id xinput set-prop pointer:'Logitech MX Anywhere 2S' 'libinput Natural Scrolling Enabled' 1 #natural scrolling
+exec --no-startup-id xinput set-prop pointer:'Logitech MX Anywhere 2S' 'Coordinate Transformation Matrix' 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 2.5 #pointer speed by half and a half
+
+# Screen layout
+exec --no-startup-id $HOME/.screenlayout/main.sh
