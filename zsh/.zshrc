@@ -77,11 +77,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-  git
-)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -113,15 +109,30 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-. "$HOME/.atuin/bin/env"
+export PATH=$PATH:/home/dawid_rudy/.local/bin
+alias ros_setup="source /opt/ros/humble/setup.zsh"
 
-export PATH="$PATH:/opt/nvim-linux64/bin"
+. "$HOME/.atuin/bin/env"
 
 eval "$(atuin init zsh)"
 
-."$HOME/.aliases"
+ros_setup
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+if [ -f ~/.ssh/agent.env ] ; then
+    . ~/.ssh/agent.env > /dev/null
+    if ! kill -0 $SSH_AGENT_PID > /dev/null 2>&1; then
+        eval `ssh-agent | tee ~/.ssh/agent.env` > /dev/null
+        # ssh-add
+    fi
+else
+    eval `ssh-agent | tee ~/.ssh/agent.env` > /dev/null
+    # ssh-add
+fi
