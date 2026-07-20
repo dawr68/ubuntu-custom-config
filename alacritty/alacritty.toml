@@ -2,7 +2,7 @@
 size = 8.0
 
 [font.normal]
-family = "MesloLGS NF"
+family = "Monaspace Krypton NF"
 
 [general]
 import = [
@@ -10,4 +10,9 @@ import = [
 ]
 
 [window]
-opacity = 0.96
+opacity = 0.9
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\u001B\r"
