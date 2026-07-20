@@ -5,6 +5,7 @@
 # The following line should contain a sharp s:
 # ß
 # If the above line is not correctly displayed, fix your editor first!
+#
 
 general {
         colors = true
@@ -16,7 +17,7 @@ order += "wireless _first_"
 order += "ethernet _first_"
 order += "cpu_usage"
 order += "memory"
-order += "disk /"
+# order += "disk /"
 order += "battery all"
 order += "volume master"
 order += "tztime local"
@@ -57,15 +58,15 @@ battery all {
 }
 
 disk "/" {
-        format = " %avail"
+        format = "  %avail"
 }
 
 memory {
-        format = " %used/%available"
+        format = " %available"
         threshold_degraded = "1G"
-        format_degraded = " < %available"
+        format_degraded = " < %available"
 }
 
 tztime local {
-        format = "󱑂 %H:%M:%S 🚀"
+        format = "󱑂 %H:%M 🚀"
 }
