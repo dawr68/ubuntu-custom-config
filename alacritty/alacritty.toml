@@ -6,7 +6,7 @@ family = "Monaspace Krypton NF"
 
 [general]
 import = [
-    "~/.config/alacritty/themes/themes/catppuccin_mocha.toml"
+    "~/.config/alacritty/themes/themes/ayu_dark.toml"
 ]
 
 [window]

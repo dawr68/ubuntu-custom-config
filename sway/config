@@ -219,43 +219,22 @@ bindsym $mod+Shift+p exec --no-startup-id korad_control.py --output off
 
 
 ### Theme colors
-#
-# Catppuccin Mocha theme colors
-#
-set $rosewater #f5e0dc
-set $flamingo #f2cdcd
-set $pink #f5c2e7
-set $mauve #cba6f7
-set $red #f38ba8
-set $maroon #eba0ac
-set $peach #fab387
-set $yellow #f9e2af
-set $green #a6e3a1
-set $teal #94e2d5
-set $sky #89dceb
-set $sapphire #74c7ec
-set $blue #89b4fa
-set $lavender #b4befe
-set $text #cdd6f4
-set $subtext1 #bac2de
-set $subtext0 #a6adc8
-set $overlay2 #9399b2
-set $overlay1 #7f849c
-set $overlay0 #6c7086
-set $surface2 #585b70
-set $surface1 #45475a
-set $surface0 #313244
-set $base #1e1e2e
-set $mantle #181825
-set $crust #11111b
 
-# target                 title     bg    text   indicator  border
-client.focused           $lavender $base $text  $rosewater $lavender
-client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
-client.unfocused         $overlay0 $base $text  $rosewater $overlay0
-client.urgent            $peach    $base $peach $overlay0  $peach
-client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
-client.background        $base
+# Ayu Dark Color Variables
+set $ayu_bg      #0B0E14
+set $ayu_fg      #BFBDB6
+set $ayu_accent  #FFB454
+set $ayu_muted   #59C2FF
+set $ayu_gray    #686868
+set $ayu_urgent  #F07178
+
+# class                 border       backgr.      text         indicator    child_border
+client.focused          $ayu_accent  $ayu_bg      $ayu_fg      $ayu_accent  $ayu_accent
+client.focused_inactive $ayu_gray    $ayu_bg      $ayu_gray    $ayu_bg      $ayu_gray
+client.unfocused        $ayu_gray    $ayu_bg      $ayu_gray    $ayu_bg      $ayu_gray
+client.urgent           $ayu_urgent  $ayu_urgent  $ayu_bg      $ayu_urgent  $ayu_urgent
+client.placeholder      $ayu_bg      $ayu_bg      $ayu_fg      $ayu_bg      $ayu_bg
+client.background       $ayu_bg
 
 #
 # Status Bar:
@@ -271,11 +250,15 @@ bar {
     status_command i3status
 
     colors {
-        # statusline #ffffff
-        # background $base
-        # active_workspace $blue $yellow $crust
-        inactive_workspace $mantle $mantle $text
-        focused_workspace  $teal $teal $crust
+        background #0b0e14
+        statusline #bfbdb6
+        separator  #686868
+
+        # class             border  background text
+        focused_workspace   #59c2ff #59c2ff    #0b0e14
+        active_workspace    #1e232b #1e232b    #bfbdb6
+        inactive_workspace  #0b0e14 #0b0e14    #686868
+        urgent_workspace    #f07178 #f07178    #0b0e14
     }
 }
 
