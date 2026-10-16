@@ -9,21 +9,21 @@
 {
   "relative_line_numbers": "enabled",
   "project_panel": {
-    "dock": "left"
+    "dock": "right"
   },
   "outline_panel": {
-    "dock": "left"
+    "dock": "right"
   },
   "collaboration_panel": {
-    "dock": "left"
+    "dock": "right"
   },
   "agent": {
-    "dock": "right",
+    "dock": "left",
     "favorite_models": [],
     "model_parameters": []
   },
   "git_panel": {
-    "dock": "left"
+    "dock": "right"
   },
   "show_edit_predictions": false,
   "edit_predictions": {
