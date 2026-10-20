@@ -70,7 +70,7 @@ disk "/" {
 
 memory {
         format = " %available"
-        threshold_degraded = "1G"
+        threshold_degraded = "10%"
         format_degraded = " < %available"
 }
 
