@@ -34,7 +34,7 @@ output * bg /usr/share/backgrounds/Resolute_Raccoon_Wallpaper_Dimmed_3840x2160.p
 ### Idle configuration
 
 exec swayidle -w \
-         timeout 300 'swaylock -f -i /usr/share/backgrounds/moskalenko-v-Snowy_Ubuntu_Light.webp' \
+         timeout 300 'swaylock -f -i /usr/share/backgrounds/moskalenko-v-Snowy_Ubuntu_Dark.webp' \
          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
          before-sleep 'swaylock -f -c 000000'
 
@@ -91,7 +91,7 @@ input "type:pointer" {
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
-    bindsym $mod+x exec swaylock -f -i /usr/share/backgrounds/moskalenko-v-Snowy_Ubuntu_Light.webp
+    bindsym $mod+x exec swaylock -f -i /usr/share/backgrounds/moskalenko-v-Snowy_Ubuntu_Dark.webp
 
 #
 # Moving around:
