@@ -242,7 +242,7 @@ client.background       $ayu_bg
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     position top
-    font Monaspace Krypton NF 8
+    font Monaspace Krypton NF 12
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
