@@ -1,0 +1,28 @@
+[global]
+# Geometry: bigger window, tucked close to the top-right corner, thin border
+width = 500
+height = (0, 400)
+origin = top-right
+offset = (5, 5)
+frame_width = 1
+# A bit of inner spacing so the larger size feels roomy
+padding = 16
+horizontal_padding = 16
+font = Monaspace Krypton NF 12
+
+frame_color = "#e6b450"
+separator_color= frame
+highlight = "#e6b450"
+
+[urgency_low]
+background = "#0b0e14b3"
+foreground = "#bfbdb6"
+
+[urgency_normal]
+background = "#0b0e14b3"
+foreground = "#bfbdb6"
+
+[urgency_critical]
+background = "#0b0e14b3"
+foreground = "#bfbdb6"
+frame_color = "#ff8f40"
