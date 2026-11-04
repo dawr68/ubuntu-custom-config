@@ -223,7 +223,7 @@ bindsym $mod+Shift+p exec --no-startup-id korad_control.py --output off
 # Ayu Dark Color Variables
 set $ayu_bg      #0B0E14
 set $ayu_fg      #BFBDB6
-set $ayu_accent  #FFB454
+set $ayu_accent  #E6B450
 set $ayu_muted   #59C2FF
 set $ayu_gray    #686868
 set $ayu_urgent  #F07178
@@ -250,15 +250,15 @@ bar {
     status_command i3status
 
     colors {
-        background #0b0e14
-        statusline #bfbdb6
-        separator  #686868
+        background $ayu_bg
+        statusline $ayu_fg
+        separator  $ayu_gray
 
-        # class             border  background text
-        focused_workspace   #59c2ff #59c2ff    #0b0e14
-        active_workspace    #1e232b #1e232b    #bfbdb6
-        inactive_workspace  #0b0e14 #0b0e14    #686868
-        urgent_workspace    #f07178 #f07178    #0b0e14
+        # class             border       background   text
+        focused_workspace   $ayu_accent  $ayu_accent  $ayu_bg
+        active_workspace    $ayu_muted   $ayu_muted   $ayu_fg
+        inactive_workspace  $ayu_bg      $ayu_bg      $ayu_gray
+        urgent_workspace    $ayu_urgent  $ayu_urgent  $ayu_bg
     }
 }
 
