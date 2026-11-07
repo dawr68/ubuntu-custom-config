@@ -12,4 +12,28 @@
     "allow_concurrent_runs": true,
     "use_new_terminal": true,
   },
+  {
+    "label": "PIO upload",
+    "command": "pio run -t upload",
+    "shell": {
+      "program": "sh",
+    },
+    "hide": "on_success",
+  },
+  {
+    "label": "PIO compiledb",
+    "command": "pio run -t compiledb",
+    "shell": {
+      "program": "sh",
+    },
+    "hide": "on_success",
+  },
+  {
+    "label": "PIO device monitor",
+    "command": "pio device monitor -b 115200",
+    "shell": {
+      "program": "sh",
+    },
+    "hide": "on_success",
+  },
 ]
