@@ -53,7 +53,7 @@
   "buffer_font_size": 15.0,
   "theme": {
     "mode": "dark",
-    "light": "One Light",
-    "dark": "Ayu Glass Dark",
+    "light": "Ayu Light",
+    "dark": "Ayu Transparent Dark",
   },
 }

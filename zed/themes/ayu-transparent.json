@@ -1,9 +1,9 @@
 {
-  "name": "Ayu Glass",
+  "name": "Ayu Transparent",
   "author": "dawr68",
   "themes": [
     {
-      "name": "Ayu Glass Dark",
+      "name": "Ayu Transparent Dark",
       "appearance": "dark",
       "style": {
         "background.appearance": "blurred",
@@ -392,7 +392,7 @@
       }
     },
     {
-      "name": "Ayu Glass Light",
+      "name": "Ayu Transparent Light",
       "appearance": "light",
       "style": {
         "background.appearance": "blurred",
@@ -781,7 +781,7 @@
       }
     },
     {
-      "name": "Ayu Glass Mirage",
+      "name": "Ayu Transparent Mirage",
       "appearance": "dark",
       "style": {
         "background.appearance": "blurred",
