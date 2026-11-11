@@ -256,7 +256,7 @@ bar {
 
         # class             border       background   text
         focused_workspace   $ayu_accent  $ayu_accent  $ayu_bg
-        active_workspace    $ayu_muted   $ayu_muted   $ayu_fg
+        active_workspace    $ayu_muted   $ayu_muted   $ayu_bg
         inactive_workspace  $ayu_bg      $ayu_bg      $ayu_gray
         urgent_workspace    $ayu_urgent  $ayu_urgent  $ayu_bg
     }
